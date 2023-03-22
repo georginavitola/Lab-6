@@ -36,6 +36,9 @@ if __name__ == "__main__":
             print("Your password has been encoded and stored!")
             print()
         elif option == 2:
-            print(f"The encoded password is {encoded_password} and the original password is {password}.")
+            decoded_password = ''
+            for i in range(0, len(encoded_password)):
+                decoded_password += str((int(encoded_password[i]) - 3 + 10) % 10)
+            print(f"The encoded password is {encoded_password} and the original password is {decoded_password}.")
         elif option == 3:
             encoder = False
